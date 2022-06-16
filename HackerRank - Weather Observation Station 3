@@ -12,6 +12,8 @@ where LAT_N is the northern latitude and LONG_W is the western longitude.
 | LONG_W      | NUMERIC    |
 +-------------+------------+
 
+** SOLUTION **
+
 SELECT DISTINCT CITY
 FROM STATION
 WHERE (ID % 2) = 0

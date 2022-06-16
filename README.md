@@ -1,2 +1,2 @@
 # SQL-Practice-Solutions
-Compilation of practice problems and my solutions
+This repository is a collection of practice problems and my solutions 

@@ -12,6 +12,8 @@ The STATION table is described as follows:
 | LONG_W      | NUMERIC    |
 +-------------+------------+
 
+** SOLUTION **
+
 (SELECT CITY, LENGTH(CITY) 
  FROM STATION
  ORDER BY STATION (CITY) DESC, CITY ASC LIMIT 1)

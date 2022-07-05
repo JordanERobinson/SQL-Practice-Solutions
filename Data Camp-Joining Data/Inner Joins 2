@@ -1,0 +1,20 @@
+
+    Join the tables countries (left) and economies (right) aliasing countries AS c and economies AS e.
+    Specify the field to match the tables ON.
+    From this join, SELECT:
+        c.code, aliased as country_code.
+        name, year, and inflation_rate, not aliased.
+
+
+Solution
+~~
+
+-- Select fields with aliases
+SELECT c.code AS country_code, name, year, inflation_rate
+FROM countries AS c
+  -- Join to economies (alias e)
+  INNER JOIN economies AS e
+    -- Match on code
+    ON c.code = e.code;
+    
+    

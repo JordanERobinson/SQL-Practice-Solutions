@@ -1,0 +1,62 @@
+Prompt
+  You'll now revisit the use of the AVG() function introduced in our introductory SQL course. 
+  You will use it in combination with left join to determine the average gross domestic product (GDP) 
+  per capita by region in 2010.
+  
+  
+    Begin with a left join with the countries table on the left and the economies 
+    table on the right.
+    Focus only on records with 2010 as the year.
+
+Part 1
+~~
+
+SELECT name, region, gdp_percapita
+FROM countries AS c
+  LEFT JOIN economies AS e
+    ON c.code = e.code
+WHERE year = 2010;
+
+~~
+
+Part 2
+
+
+    Modify your code to calculate the average GDP per capita AS avg_gdp 
+    for each region in 2010.
+    Select the region and avg_gdp fields.
+    
+~~
+      Attempt 1 : incorrect submission- query returned a table of 184 rows. should be 23 rows.
+SELECT region, gdp_percapita AS avg_gdp
+FROM countries AS c
+  LEFT JOIN economies AS e
+    ON c.code = e.code
+WHERE year = 2010
+GROUP BY region, avg_gdp;
+
+      Attempt 2: Correct
+SELECT region, AVG(gdp_percapita) AS avg_gdp
+FROM countries AS c
+  LEFT JOIN economies AS e
+    ON c.code = e.code
+WHERE year = 2010
+GROUP BY region;
+
+~~
+
+Part 3
+
+Arrange this data on average GDP per capita for each region in 2010 from highest 
+to lowest average GDP per capita.
+
+~~
+
+SELECT region, AVG(gdp_percapita) AS avg_gdp
+FROM countries AS c
+  LEFT JOIN economies AS e
+    ON c.code = e.code
+WHERE year = 2010
+GROUP BY region
+ORDER BY avg_gdp DESC;
+~~
